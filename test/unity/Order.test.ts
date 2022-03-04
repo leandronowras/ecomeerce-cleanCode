@@ -66,3 +66,13 @@ test("Deve criar um pedido com 3 itens com o calculo do frete fixo", function ()
 	const freight = order.getFreight()
 	expect(freight).toBe(50);
 });
+
+test("Deve criar um pedido com codigo", function () {
+	const cpf = "839.435.452-10";
+	const order = new Order(cpf, new Date(), new FixedFreightCalculator());
+	order.addItem(new Item(1, "Música", "CD", 1000, 100, 30, 10, 3), 1);
+	order.addItem(new Item(2, "Vídeo", "DVD", 5000, 100, 50, 50, 20), 1);
+	order.addItem(new Item(3, "Vídeo", "VHS", 30, 30, 10, 10), 3);
+	const code = order.getCode()
+	expect(code).toBe('202200000001');
+});

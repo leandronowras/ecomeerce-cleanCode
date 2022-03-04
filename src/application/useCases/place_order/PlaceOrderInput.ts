@@ -1,4 +1,4 @@
-import Cpf from "../../domain/entity/Cpf";
+import Cpf from "../../../domain/entity/Cpf";
 
 export default class PlaceOrderInput {
     constructor(
