@@ -1,22 +1,17 @@
 import PlaceOrder from "../../src/application/useCases/place_order/PlaceOrder"
-import OrderRepository from "../../src/domain/repository/OrderRepository"
 import PgPromiseConnectionAdapter from "../../src/infra/database/PgPromiseConnectionAdapter"
-import CouponRepositoryDatabase from "../../src/infra/repository/database/CouponRepositoryDatabase"
-import ItemRepositoryDatabase from "../../src/infra/repository/database/ItemRepositoryDatabase"
+import DatabaseRepositoryFactory from "../../src/infra/factory/DatabaseRepositoryFactory"
 import OrderRepositoryDatabase from "../../src/infra/repository/database/OrderRepositoryDatabase"
-import CouponRepositoryMemory from "../../src/infra/repository/memory/CouponRepositoryMemory"
-import ItemRepositoryMemory from "../../src/infra/repository/memory/ItemRepositoryMemory"
-import OrderRepositoryMemory from "../../src/infra/repository/memory/OrderRepositoryMemory"
+
 
 let placeOrder: PlaceOrder
 let orderRepository: OrderRepositoryDatabase
 
 beforeEach(() => {
     const connection = PgPromiseConnectionAdapter.getInstance()
-    const itemRepository = new ItemRepositoryDatabase(connection)
-     orderRepository = new OrderRepositoryDatabase(connection)
-    const couponRepository = new CouponRepositoryDatabase(connection)
-    placeOrder = new PlaceOrder(itemRepository, orderRepository, couponRepository)
+    orderRepository = new OrderRepositoryDatabase(connection)
+    const repositoryFactory = new DatabaseRepositoryFactory()
+    placeOrder = new PlaceOrder(repositoryFactory)
 })
 
 test('deve fazer um pedido', async () => {
