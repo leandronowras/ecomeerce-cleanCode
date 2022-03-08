@@ -1,6 +1,6 @@
 import SimulateFreigth from "../../src/application/useCases/simulate_freight/SimulateFreight"
 import SimulateFreigthInput from "../../src/application/useCases/simulate_freight/SimulateFreightInput"
-import DefaultFreightCalculator from "../../src/DefaultFreightCalculator"
+import DefaultFreightCalculator from "../../src/application/useCases/simulate_freight/DefaultFreightCalculator"
 import PgPromiseConnectionAdapter from "../../src/infra/database/PgPromiseConnectionAdapter"
 import ItemRepositoryDatabase from "../../src/infra/repository/database/ItemRepositoryDatabase"
 

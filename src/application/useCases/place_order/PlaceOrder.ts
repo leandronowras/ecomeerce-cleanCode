@@ -1,4 +1,4 @@
-import DefaultFreightCalculator from "../../../DefaultFreightCalculator";
+import DefaultFreightCalculator from "../simulate_freight/DefaultFreightCalculator";
 import Order from "../../../domain/entity/Order";
 import RepositoryFactory from "../../../domain/factory/RepositoryFactory";
 import CouponRepository from "../../../domain/repository/CouponRepository";

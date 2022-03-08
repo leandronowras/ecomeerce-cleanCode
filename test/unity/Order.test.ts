@@ -1,5 +1,5 @@
 import Coupon from "../../src/domain/entity/Coupon";
-import FixedFreightCalculator from "../../src/FixedFreightCalculator";
+import FixedFreightCalculator from "../../src/application/useCases/simulate_freight/FixedFreightCalculator";
 import Item from "../../src/domain/entity/Item";
 import Order from "../../src/domain/entity/Order";
 
