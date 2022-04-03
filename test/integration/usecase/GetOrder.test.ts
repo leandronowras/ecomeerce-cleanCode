@@ -1,7 +1,6 @@
-import GetOrder from "../../../src/application/query/get_order/GetOrder";
+import GetOrder from "../../../src/application/usecase/get_order/GetOrder";
 import PlaceOrder from "../../../src/application/usecase/place_order/PlaceOrder";
 import Broker from "../../../src/infra/broker/Broker";
-import OrderDAODatabase from "../../../src/infra/dao/OrderDAODatabase";
 import PgPromiseConnectionAdapter from "../../../src/infra/database/PgPromiseConnectionAdapter";
 import DatabaseRepositoryFactory from "../../../src/infra/factory/DatabaseRepositoryFactory";
 import OrderRepositoryDatabase from "../../../src/infra/repository/database/OrderRepositoryDatabase";
@@ -14,10 +13,9 @@ beforeEach(function () {
 	const connection = PgPromiseConnectionAdapter.getInstance();
 	orderRepository = new OrderRepositoryDatabase(connection);
 	const repositoryFactory = new DatabaseRepositoryFactory();
-	const orderDAO = new OrderDAODatabase(connection);
 	const broker = new Broker();
 	placeOrder = new PlaceOrder(repositoryFactory, broker);
-	getOrder = new GetOrder(orderDAO);
+	getOrder = new GetOrder(repositoryFactory);
 });
 
 test("Deve obter um pedido pelo código", async function () {
