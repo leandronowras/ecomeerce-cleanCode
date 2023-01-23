@@ -17,3 +17,27 @@ Start the app
 ```
 npm run main
 ```
+
+## Folder Structure
+```
+.
+├── application
+│   ├── dao
+│   ├── handler
+│   ├── query
+│   └── useCases
+├── domain
+│   ├── entity
+│   ├── event
+│   ├── factory
+│   └── repository
+├── infra
+│   ├── broker
+│   ├── controller
+│   ├── dao
+│   ├── database
+│   ├── factory
+│   ├── http
+│   └── repository
+└── main.ts
+```
