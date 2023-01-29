@@ -42,8 +42,33 @@ npm run main
 ### Context Map
 <a name="business_usecases"></a>
 ### Business Usecases
+As the project proposes to be the back end of an ecommerce, the current use cases are:
+- get_order
+  - Gets an order by code
+- get_orders
+  - Gets all orders
+- get_stock
+  - Gets all items in a stock
+- place_order
+  - Makes an order
+- save_stock
+  - Saves item inside a stock
+- simulate_freight
+  - Simulates the freight for an order
+- validate_coupon
+  - Validates a coupon
+
 <a name="clean_architecture"></a>
 ### Clean Architecture
+#### UML Diagram
+
+<img width="1009" alt="image" src="https://user-images.githubusercontent.com/56269786/215355328-1cc554b2-0f3e-45de-85fc-7ed8ddcf069d.png">
+
+- Yellow: Entities
+- Red: Use Cases
+- Green: Interface Adapters
+- Blue: Frameworks and Drives
+
 <a name="patterns_used"></a>
 ## Patterns Used
 <a name="cqrs"></a>
