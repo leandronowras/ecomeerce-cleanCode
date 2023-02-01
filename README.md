@@ -89,7 +89,10 @@ As the project proposes to be the back end of an ecommerce, the current use case
 ## Test
 <a name="test_coverage"></a>
 ### Test coverage
-
+Test report for each Domain Entity
+<p align="center">
+<img width="883" alt="image" src="https://user-images.githubusercontent.com/56269786/216160868-71b94ca9-2e23-4082-9376-ef54b374e2b6.png">
+</p>
 
 ## Folder Structure
 ```
