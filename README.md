@@ -17,7 +17,6 @@
   - [Repository](#repository)
 - [Database](#database)
   - [How to connect](#how_to_connect)
-  - [ER diagram](#er_diagram)
 - [Test](#test)
   - [Test Coverage](#test_coverage)
   
@@ -104,10 +103,13 @@ Repositories were used for managing the persistence of domain entities while DAO
 
 <a name="database"></a>
 ## Database
+The application was designed to use PostgreSQL, but as it has a decoupled infrastructure, it can easily be converted to another database.
 <a name="how_to_connect"></a>
 ### - How to connect
-<a name="er_diagram"></a>
-### - ER Diagram
+In the root folder, there is a SQL script to create all the necessary tables.
+<br></br>
+Information for the connection is passed inside the PgPromiseConnectionAdapter class using the singleton pattern. Replace the credentials in constructor to use your own database.
+
 <a name="test"></a>
 ## Test
 <a name="test_coverage"></a>
